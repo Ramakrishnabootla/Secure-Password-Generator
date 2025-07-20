@@ -30,26 +30,26 @@ public class PasswordGenerator {
         Scanner sc = new Scanner(System.in);
         int length;
         while (true) {
-            System.out.println("🔢 Enter the length of the Password (min 8): ");
+            System.out.println("[*] Enter the length of the Password (min 8): ");
             length = sc.nextInt();
             if (length >= 8) {
                 break;
             } else {
-                System.out.println("❌ Password length must be at least 8 characters.");
+                System.out.println("[!] Password length must be at least 8 characters.");
             }
         }
         String Password = strongPassword(length);
-        System.out.println("\n✅ The generated password of length " + length + " is:\n\n🔐 " + Password);
+        System.out.println("\n[+] The generated password of length " + length + " is:\n\n>>> " + Password);
         String input;
         do {
-            System.out.println("\n🔁 Do you want another password? (yes / no): ");
+            System.out.println("\n[?] Do you want another password? (yes / no): ");
             input = sc.next();
             if (input.equalsIgnoreCase("yes")) {
                 Password = strongPassword(length);
-                System.out.println("🆕 New password:\n🔐 " + Password);
+                System.out.println("[~] New password:\n>>> " + Password);
             }
         } while (input.equalsIgnoreCase("yes"));
-        System.out.println("\n👋 Thank you for using the Password Generator!");
+        System.out.println("\n[✓] Thank you for using the Password Generator!");
         sc.close();
     }
 }
